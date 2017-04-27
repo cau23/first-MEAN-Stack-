@@ -11,6 +11,27 @@ app.use(express.static(__dirname + "/public"));
 // when it receives the request it's going to print to console in command prompt
 app.get('/contactlist', function (req, res) {
 	console.log("I received a GET request")
+
+	person1 = {
+		name: 'Clayton',
+		email: 'claytonemail.com',
+		number: '(111) 111-1111'
+	};
+
+	person2 = {
+		name: 'Evelyn',
+		email: 'evelynemail.com',
+		number: '(222) 111-1111'
+	};
+
+	person3 = {
+		name: 'Martha',
+		email: 'marthaemail.com',
+		number: '(615) 400-3121'
+	};
+
+	var contactlist = [person1, person2, person3];
+	res.json(contactlist);
 });
 
 app.listen(3000);
